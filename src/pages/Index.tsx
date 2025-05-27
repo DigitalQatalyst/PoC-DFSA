@@ -2,85 +2,88 @@
 import { Link } from "react-router-dom";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { FileText, Grid3x3, FormInput } from "lucide-react";
+import { CreditCard, FileText, Building2, PiggyBank, TrendingUp, Shield } from "lucide-react";
 
 const Index = () => {
   const forms = [
     {
       id: 1,
-      title: "Contact Form",
-      description: "Get in touch with us through this simple contact form",
-      fields: 4,
-      type: "Contact",
-      color: "from-blue-500 to-purple-600",
-      icon: FileText,
+      title: "Account Opening Application",
+      description: "Open a new checking or savings account with our comprehensive application form",
+      fields: 8,
+      type: "Account Services",
+      color: "from-blue-600 to-blue-800",
+      icon: Building2,
     },
     {
       id: 2,
-      title: "User Registration",
-      description: "Sign up for our service with this comprehensive registration form",
-      fields: 6,
-      type: "Registration",
-      color: "from-green-500 to-teal-600",
-      icon: FormInput,
-    },
-    {
-      id: 3,
-      title: "Feedback Survey",
-      description: "Share your thoughts and help us improve our services",
-      fields: 5,
-      type: "Survey",
-      color: "from-orange-500 to-red-600",
-      icon: Grid3x3,
-    },
-    {
-      id: 4,
-      title: "Event Registration",
-      description: "Register for our upcoming events and workshops",
-      fields: 7,
-      type: "Event",
-      color: "from-purple-500 to-pink-600",
+      title: "Loan Application",
+      description: "Apply for personal, auto, or home loans with our detailed application process",
+      fields: 12,
+      type: "Lending",
+      color: "from-green-600 to-green-800",
       icon: FileText,
     },
     {
+      id: 3,
+      title: "Credit Card Application",
+      description: "Apply for our premium credit cards with competitive rates and rewards",
+      fields: 9,
+      type: "Credit Services",
+      color: "from-purple-600 to-purple-800",
+      icon: CreditCard,
+    },
+    {
+      id: 4,
+      title: "Investment Portfolio Setup",
+      description: "Start your investment journey with our guided portfolio configuration",
+      fields: 10,
+      type: "Investment",
+      color: "from-indigo-600 to-indigo-800",
+      icon: TrendingUp,
+    },
+    {
       id: 5,
-      title: "Job Application",
-      description: "Apply for exciting career opportunities with our team",
-      fields: 8,
-      type: "Application",
-      color: "from-indigo-500 to-blue-600",
-      icon: FormInput,
+      title: "Insurance Claim Form",
+      description: "Submit insurance claims quickly and efficiently through our digital platform",
+      fields: 7,
+      type: "Insurance",
+      color: "from-red-600 to-red-800",
+      icon: Shield,
     },
     {
       id: 6,
-      title: "Newsletter Signup",
-      description: "Stay updated with our latest news and announcements",
-      fields: 3,
-      type: "Newsletter",
-      color: "from-cyan-500 to-blue-600",
-      icon: Grid3x3,
+      title: "Wealth Management Consultation",
+      description: "Schedule a consultation with our wealth management experts",
+      fields: 6,
+      type: "Advisory",
+      color: "from-amber-600 to-amber-800",
+      icon: PiggyBank,
     },
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100">
       {/* Header */}
-      <div className="bg-white shadow-sm border-b">
-        <div className="container mx-auto px-6 py-8">
+      <div className="bg-white shadow-lg border-b border-slate-200">
+        <div className="container mx-auto px-6 py-12">
           <div className="text-center">
-            <h1 className="text-4xl font-bold text-gray-900 mb-4">
-              Form Builder
-            </h1>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Select a form below to get started. Each form is designed for specific use cases
-              and provides an intuitive experience for your users.
+            <div className="flex items-center justify-center mb-6">
+              <Building2 className="w-12 h-12 text-blue-600 mr-4" />
+              <h1 className="text-5xl font-bold text-slate-900">
+                FinanceHub
+              </h1>
+            </div>
+            <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+              Streamline your financial services with our comprehensive digital platform. 
+              Select from our range of professional forms designed for banking, lending, and investment services.
             </p>
           </div>
         </div>
       </div>
 
       {/* Form Grid */}
-      <div className="container mx-auto px-6 py-12">
+      <div className="container mx-auto px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {forms.map((form) => {
             const IconComponent = form.icon;
@@ -90,34 +93,34 @@ const Index = () => {
                 to={`/form/${form.id}`}
                 className="group block transform transition-all duration-300 hover:scale-105"
               >
-                <Card className="h-full bg-white shadow-md hover:shadow-xl transition-all duration-300 border-0 overflow-hidden">
-                  {/* Gradient Header */}
-                  <div className={`h-2 bg-gradient-to-r ${form.color}`} />
+                <Card className="h-full bg-white shadow-lg hover:shadow-2xl transition-all duration-300 border border-slate-200 overflow-hidden">
+                  {/* Professional Header */}
+                  <div className={`h-3 bg-gradient-to-r ${form.color}`} />
                   
-                  <CardHeader className="pb-4">
-                    <div className="flex items-start justify-between mb-3">
-                      <div className={`p-3 rounded-lg bg-gradient-to-r ${form.color} bg-opacity-10`}>
-                        <IconComponent className="w-6 h-6 text-gray-700" />
+                  <CardHeader className="pb-4 bg-gradient-to-br from-white to-slate-50">
+                    <div className="flex items-start justify-between mb-4">
+                      <div className={`p-4 rounded-xl bg-gradient-to-r ${form.color} shadow-lg`}>
+                        <IconComponent className="w-8 h-8 text-white" />
                       </div>
-                      <Badge variant="secondary" className="text-xs">
+                      <Badge variant="secondary" className="text-xs font-medium bg-slate-100 text-slate-700">
                         {form.fields} fields
                       </Badge>
                     </div>
-                    <CardTitle className="text-xl font-semibold text-gray-900 group-hover:text-blue-600 transition-colors">
+                    <CardTitle className="text-xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors leading-tight">
                       {form.title}
                     </CardTitle>
-                    <Badge variant="outline" className="w-fit">
+                    <Badge variant="outline" className="w-fit border-slate-300 text-slate-600">
                       {form.type}
                     </Badge>
                   </CardHeader>
                   
-                  <CardContent>
-                    <CardDescription className="text-gray-600 leading-relaxed">
+                  <CardContent className="bg-white">
+                    <CardDescription className="text-slate-600 leading-relaxed mb-6">
                       {form.description}
                     </CardDescription>
                     
-                    <div className="mt-6 flex items-center text-sm text-blue-600 font-medium group-hover:text-blue-700 transition-colors">
-                      Open Form
+                    <div className="flex items-center text-sm font-semibold text-blue-600 group-hover:text-blue-700 transition-colors">
+                      Begin Application
                       <svg 
                         className="ml-2 w-4 h-4 transform group-hover:translate-x-1 transition-transform" 
                         fill="none" 
@@ -135,11 +138,22 @@ const Index = () => {
         </div>
       </div>
 
-      {/* Footer */}
-      <div className="bg-white border-t mt-16">
-        <div className="container mx-auto px-6 py-8">
-          <div className="text-center text-gray-600">
-            <p>Built with React, TypeScript, and Tailwind CSS</p>
+      {/* Professional Footer */}
+      <div className="bg-slate-900 text-white mt-20">
+        <div className="container mx-auto px-6 py-12">
+          <div className="grid md:grid-cols-3 gap-8 text-center md:text-left">
+            <div>
+              <h3 className="text-lg font-semibold mb-3">Security & Compliance</h3>
+              <p className="text-slate-400 text-sm">FDIC Insured • SSL Encrypted • SOC 2 Compliant</p>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold mb-3">Customer Support</h3>
+              <p className="text-slate-400 text-sm">Available 24/7 • 1-800-FINANCE • support@financehub.com</p>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold mb-3">Digital Platform</h3>
+              <p className="text-slate-400 text-sm">Built with enterprise-grade security and reliability</p>
+            </div>
           </div>
         </div>
       </div>
